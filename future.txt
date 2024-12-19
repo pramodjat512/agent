@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/skills/manifest/v1.0/skillManifest.json",
+  "name": "PersonalizedLearning",
+  "id": "personalized-learning-skill",
+  "version": "1.0",
+  "description": "Recommends training programs and certifications tailored to users' career goals.",
+  "actions": [
+    {
+      "id": "GetRecommendations",
+      "definition": {
+        "description": "Provide tailored training recommendations.",
+        "inputs": [
+          { "name": "CareerGoal", "type": "string", "description": "User's career goal" },
+          { "name": "CurrentSkills", "type": "string", "description": "User's existing skills" },
+          { "name": "DesiredIndustry", "type": "string", "description": "Target industry or job role" }
+        ],
+        "outputs": [
+          { "name": "Recommendations", "type": "array", "description": "List of recommended courses or certifications" }
+        ]
+      }
+    }
+  ],
+  "endpoints": [
+    {
+      "name": "default",
+      "protocol": "BotFrameworkV3",
+      "url": "https://your-api-endpoint.com/recommendations",
+      "description": "Endpoint for getting personalized learning recommendations."
+    }
+  ]
+}
